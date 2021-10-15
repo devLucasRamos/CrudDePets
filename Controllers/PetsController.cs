@@ -75,5 +75,38 @@ namespace Controllers
             context.SaveChanges();
             return Ok();
         }
+        [HttpPut]
+        [Route(template: "Pets/{id}")]
+        public IActionResult Put([FromServices] AppDbContext context,
+            [FromBody] CreateViewModel model, [FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return NotFound();
+            }
+            else
+            {
+                var pet = context.Pets.FirstOrDefault(x => x.Id == id);
+                if (pet == null)
+                {
+                    return NotFound();
+                }
+                try
+                {
+                    pet.DonoNome = model.DonoNome == null? pet.DonoNome : model.DonoNome;
+                    pet.Nome = model.Nome == null? pet.Nome : model.Nome;
+                    pet.TipoDePet = model.TipoDePet == null? pet.TipoDePet : model.TipoDePet;
+                    pet.Idade = model.Idade == 0? pet.Idade : model.Idade;
+                    pet.Cor = model.Cor == null? pet.Cor : model.Cor;
+                    context.Update(pet);
+                    context.SaveChanges();
+                    return Ok(pet);
+                }
+                catch (Exception)
+                {
+                    return NotFound();
+                }
+            }
+        }
     }
 }
