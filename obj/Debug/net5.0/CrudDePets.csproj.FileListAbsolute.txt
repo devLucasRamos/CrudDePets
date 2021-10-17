@@ -50,3 +50,5 @@ C:\Users\User\source\repos\CrudDePets\obj\Debug\net5.0\CrudDePets.dll
 C:\Users\User\source\repos\CrudDePets\obj\Debug\net5.0\ref\CrudDePets.dll
 C:\Users\User\source\repos\CrudDePets\obj\Debug\net5.0\CrudDePets.pdb
 C:\Users\User\source\repos\CrudDePets\obj\Debug\net5.0\CrudDePets.genruntimeconfig.cache
+C:\Users\User\source\repos\CrudDePets\bin\Debug\net5.0\CrudDePets.Views.dll
+C:\Users\User\source\repos\CrudDePets\bin\Debug\net5.0\CrudDePets.Views.pdb

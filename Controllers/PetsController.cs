@@ -33,7 +33,7 @@ namespace Controllers
 
         [HttpPost]
         [Route(template: "Pets")]
-        public IActionResult Post([FromServices] AppDbContext context, [FromBody] CreateViewModel model)
+        public IActionResult Post([FromServices] AppDbContext context, [FromBody] PetsViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Controllers
         [HttpPut]
         [Route(template: "Pets/{id}")]
         public IActionResult Put([FromServices] AppDbContext context,
-            [FromBody] CreateViewModel model, [FromRoute] int id)
+            [FromBody] PetsViewModel model, [FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {

@@ -2,7 +2,7 @@
 
 namespace ViewModel
 {
-    public class CreateViewModel
+    public class PetsViewModel
     {
         [Required]
         public string DonoNome { get; set; }
